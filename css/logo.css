@@ -17,7 +17,7 @@
   background:black;
   width:24%;
   height:100%;
-  padding:2%;
+  padding:5%;
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   position:relative;
@@ -63,9 +63,9 @@
 }
 
 .glyph.e:before {
-  top:48%;
-  height:8%;
-  width:50%;
+  top:43%;
+  height:16%;
+  width:40%;
   -webkit-animation:  widthGrow 1s forwards ease-in-out 0;
 }
 .glyph.e:after {
@@ -79,9 +79,9 @@
   -webkit-animation:  paddingShrinkToM 1s ease-in-out 0;
 }
 .glyph.m:before {
-  left:42%;
+  left:40%;
   height:48%;
-  width:10%;
+  width:20%;
   -webkit-animation:  heightGrow 1s forwards ease-in-out 0;
 }
 .glyph.g {
@@ -90,16 +90,16 @@
 }
 .glyph.g:before {
   right:0%;
-  width:8%;
+  width:20%;
   height:52%;
   bottom:0;
   -webkit-animation:  widthGrowTo8 .5s forwards ease-in-out .5s;
 }
 .glyph.g:after {
   left:auto;
-  top:48%;
+  top:43%;
   right:0;
-  height:8%;
+  height:16%;
   width:50%;
   -webkit-animation:  widthGrow 1s forwards ease-in-out 0;
 }
