@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>emgerold - Moritz Gerold</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<link rel="stylesheet" media="screen" href="css/reset.css">
+	<link rel="stylesheet" media="screen" href="css/master.css">
+	<script src="js/jquery.min.v2.0.3.js"></script>
+	<script src="js/prefixfree.min.js"></script>
+	<script>
+
+		function addEvents() {
+
+			jQuery('.wrapper .glyph').on('click', function(){
+				var $wrapper = $(this).parent();
+				var $content = $('[data-content="wrapper"]');
+
+				$(this)
+					.toggleClass('hover')
+					.siblings()
+					.removeClass('hover');
+
+				$('html').removeClass('e1 m g e2').removeClass('active');
+				if ($(this).hasClass('hover')) $('html').addClass($(this).attr('data-link') + ' 	active');
+
+
+				var hasActive = ($(this).parent().find('.hover').size() > 0) ? true : false ;
+
+				if (!hasActive) {
+					$wrapper.removeClass('top');
+					$content.removeClass('active')
+				} else {
+					$wrapper.addClass('top');
+					$content
+						.addClass('active')
+						.children('[data-content]').removeClass('active')
+						.end()
+						.find('[data-content='+$(this).attr('data-link')+']')
+						.toggleClass('active');
+				}
+			});
+		}
+
+		window.setTimeout('addEvents();', 1000);
+
+	</script>
+</head>
+	<body>
+	<div class="wrapper">
+		<span class="glyph e animate" data-link="e1"><span></span></span>
+		<span class="glyph m animate" data-link="m"><span></span></span>
+		<span class="glyph g animate" data-link="g"><span></span></span>
+		<span class="glyph e animate" data-link="e2"><span></span></span>
+	</div>
+	<div class="content" data-content="wrapper">
+		<div data-content="e1">
+			<h2>Elected projects...</h2>
+			<p>I'm doing a whole bunch of different things. These are some chosen projects. Enjoy.</p>
+			<ul class="projects-group">
+				<li class="projects-single">
+					<a href="#">
+						<h3>I &lt;3 snow</h3>
+						<img alt="a ski map" src="./img/projects-1.png" />
+					</a>
+				</li>
+				<li class="projects-single">
+					<a href="#">
+						<h3>Sticky Navigation></h3>
+						<img alt="a ski map" src="./img/projects-3.png" />
+					</a>
+					</li>
+				<li class="projects-single">
+					<a href="#">
+						<h3>v&lt;3lo></h3>
+						<img alt="a ski map" src="./img/projects-1.png" />
+					</a>
+				</li>
+				<li class="projects-single">
+					<a href="#">
+						<h3>lalelu</h3>
+						<img alt="a ski map" src="./img/projects-3.png" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div data-content="m">
+			<h2>Moritz...</h2>
+		</div>
+		<div data-content="g">
+			<h2>Gerold...</h2>
+		</div>
+		<div data-content="e2">
+			<h2>Everything  </h2>
+		</div>
+	</div>
+	</body>
+</html>

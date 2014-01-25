@@ -1,0 +1,22 @@
+body, html {
+	font-size:100%;
+	line-height:1;
+	font-family:Arial, sans-serif;
+}
+
+h1 {
+	font-size:250%;
+	margin-bottom: 30px;
+}
+h2 {
+	font-size:200%;
+	margin-bottom: 20px;
+}
+h3 {
+	font-size:150%;
+	margin-bottom: 18px;
+}
+
+.content {
+	text-align: center;
+}
