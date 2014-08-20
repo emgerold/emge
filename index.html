@@ -42,19 +42,39 @@
 			});
 		}
 
-		window.setTimeout('addEvents();', 1000);
+		jQuery(document).ready(function($){
+			var $wrapper = $('.wrapper');
+			// $wrapper.addClass('e1 m g e2');
+			// $wrapper.on('click', function(){$(this).toggleClass('pure')})
+			var clicks = 0;
+			$('.glyph').on('click', function(){
+				// if ($('.wrapper').hasClass('e1 m g e2')) $('.wrapper').removeClass().addClass('wrapper');
+				// else $('.wrapper').addClass($(this).attr('data-link'));
+				$wrapper.addClass($(this).attr('data-link'));
+				clicks++;
+			 	if (clicks === 4) {
+			 		$wrapper.addClass('pure');
+			 		$('[data-content="wrapper"]').addClass('visible');
+			 	}
+			});
+		});
+
+		//window.setTimeout('addEvents();', 1000);
 
 	</script>
 </head>
 	<body>
 	<div class="wrapper">
-		<span class="glyph e animate" data-link="e1"><span></span></span>
-		<span class="glyph m animate" data-link="m"><span></span></span>
-		<span class="glyph g animate" data-link="g"><span></span></span>
-		<span class="glyph e animate" data-link="e2"><span></span></span>
+		<span class="glyph e e1" data-link="e1"><span></span></span>
+		<span class="glyph m" data-link="m"><span></span></span>
+		<span class="glyph g" data-link="g"><span></span></span>
+		<span class="glyph e e2" data-link="e2"><span></span></span>
 	</div>
 	<div class="content" data-content="wrapper">
-		<div data-content="e1">
+		<h1>Moritz Gerold</h1>
+		<h2>Informationsdesign</h2>
+		<a href="mailto:buero@emgerold.de">Drop me a message.</a>
+		<!-- <div data-content="e1">
 			<h2>Elected projects...</h2>
 			<p>I'm doing a whole bunch of different things. These are some chosen projects. Enjoy.</p>
 			<ul class="projects-group">
@@ -92,7 +112,7 @@
 		</div>
 		<div data-content="e2">
 			<h2>Everything  </h2>
-		</div>
+		</div> -->
 	</div>
 	</body>
 </html>
