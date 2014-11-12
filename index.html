@@ -8,111 +8,34 @@
 	<link rel="stylesheet" media="screen" href="css/master.css">
 	<script src="js/jquery.min.v2.0.3.js"></script>
 	<script src="js/prefixfree.min.js"></script>
-	<script>
-
-		function addEvents() {
-
-			jQuery('.wrapper .glyph').on('click', function(){
-				var $wrapper = $(this).parent();
-				var $content = $('[data-content="wrapper"]');
-
-				$(this)
-					.toggleClass('hover')
-					.siblings()
-					.removeClass('hover');
-
-				$('html').removeClass('e1 m g e2').removeClass('active');
-				if ($(this).hasClass('hover')) $('html').addClass($(this).attr('data-link') + ' 	active');
-
-
-				var hasActive = ($(this).parent().find('.hover').size() > 0) ? true : false ;
-
-				if (!hasActive) {
-					$wrapper.removeClass('top');
-					$content.removeClass('active')
-				} else {
-					$wrapper.addClass('top');
-					$content
-						.addClass('active')
-						.children('[data-content]').removeClass('active')
-						.end()
-						.find('[data-content='+$(this).attr('data-link')+']')
-						.toggleClass('active');
-				}
-			});
-		}
-
-		jQuery(document).ready(function($){
-			var $wrapper = $('.wrapper');
-			// $wrapper.addClass('e1 m g e2');
-			// $wrapper.on('click', function(){$(this).toggleClass('pure')})
-			var clicks = 0;
-			$('.glyph').on('click', function(){
-				// if ($('.wrapper').hasClass('e1 m g e2')) $('.wrapper').removeClass().addClass('wrapper');
-				// else $('.wrapper').addClass($(this).attr('data-link'));
-				$wrapper.addClass($(this).attr('data-link'));
-				clicks++;
-			 	if (clicks === 4) {
-			 		$wrapper.addClass('pure');
-			 		$('[data-content="wrapper"]').addClass('visible');
-			 	}
-			});
-		});
-
-		//window.setTimeout('addEvents();', 1000);
-
-	</script>
+	<script src="js/main.js"></script>
 </head>
 	<body>
-	<div class="wrapper">
-		<span class="glyph e e1" data-link="e1"><span></span></span>
-		<span class="glyph m" data-link="m"><span></span></span>
-		<span class="glyph g" data-link="g"><span></span></span>
-		<span class="glyph e e2" data-link="e2"><span></span></span>
-	</div>
-	<div class="content" data-content="wrapper">
-		<h1>Moritz Gerold</h1>
-		<h2>Informationsdesign</h2>
-		<a href="mailto:buero@emgerold.de">Drop me a message.</a>
-		<!-- <div data-content="e1">
-			<h2>Elected projects...</h2>
-			<p>I'm doing a whole bunch of different things. These are some chosen projects. Enjoy.</p>
-			<ul class="projects-group">
-				<li class="projects-single">
-					<a href="#">
-						<h3>I &lt;3 snow</h3>
-						<img alt="a ski map" src="./img/projects-1.png" />
-					</a>
-				</li>
-				<li class="projects-single">
-					<a href="#">
-						<h3>Sticky Navigation></h3>
-						<img alt="a ski map" src="./img/projects-3.png" />
-					</a>
-					</li>
-				<li class="projects-single">
-					<a href="#">
-						<h3>v&lt;3lo></h3>
-						<img alt="a ski map" src="./img/projects-1.png" />
-					</a>
-				</li>
-				<li class="projects-single">
-					<a href="#">
-						<h3>lalelu</h3>
-						<img alt="a ski map" src="./img/projects-3.png" />
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div data-content="m">
-			<h2>Moritz...</h2>
-		</div>
-		<div data-content="g">
-			<h2>Gerold...</h2>
-		</div>
-		<div data-content="e2">
-			<h2>Everything  </h2>
-		</div> -->
+	<div class='wrapper start-animation'>
+	  <div class='letter e' data-link='e1'>
+	    <div class='background'></div>
+	    <div class='content' data-content='e1'>
+	      Erlesene Links
+	    </div>
+	  </div>
+	  <div class='letter m' data-link='m'>
+	    <div class='background'></div>
+	    <div class='content' data-content='m'>
+	      Moritz. Ich.
+	    </div>
+	  </div>
+	  <div class='letter g' data-link='g'>
+	    <div class='background'></div>
+	    <div class='content' data-content='g'>
+	      Gerold.
+	    </div>
+	  </div>
+	  <div class='letter e' data-link='e2'>
+	    <div class='background'></div>
+	    <div class='content' data-content='e2'>
+	      Elektronische Post
+	    </div>
+	  </div>
 	</div>
 	</body>
 </html>
