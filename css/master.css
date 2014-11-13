@@ -4,6 +4,7 @@ body, html {
   background: #000;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -22,14 +23,14 @@ body {
 .content {
   color: #000;
   position: absolute;
-  width: 100%;
+  width: 97%;
   transition: all 0.3s ease-in;
-  top: 150%;
+  top: 100%;
 }
 
-.active-content .content {
+.final-state .content {
   color: #ececec;
-  top: 120%;
+  top: 49.5%;
 }
 
 .letter {
@@ -42,29 +43,28 @@ body {
   left: 0;
   top: 0;
   transition: left 0.3s ease-out 0s, top 0.3s ease-out 0s, box-shadow 0.2s ease-in 0s, background 0.2s ease-in 0s, transform 0.2s ease-in 0s;
-  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.5);*/
   cursor:pointer;
 }
 .letter:hover,
 .letter:hover > div:before {
   background: rgba(240, 150, 9, .4);
 }
-.letter.active-content.m,
-.letter.active-content.g {
-  top: -23.5vw;
-  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);
+.letter.active-content {
+  /*top: -14%;*/
+  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);*/
   background: rgba(240, 150, 9, 1);
   cursor:s-resize;
   z-index: 2;
 }
 .letter.active-content.e{
-  transform: scaleY(-1) translate(23vw, 23.5vw);
+  /*transform: scaleY(-1) translate(23vw, 23.5vw);*/
 }
 .letter.active-content.e.last{
-  transform:  translate(-23vw, -23.5vw);
+  /*transform:  translate(-23vw, -23.5vw);*/
 }
 .letter.active-content > div:before {
-  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);
+  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);*/
   background: rgba(240, 150, 9, 1);
 }
 
@@ -138,11 +138,11 @@ body {
   background: #414042!important;
   cursor: default;
 }
-.start-animation .letter.e:first-child {
-  left: 35%;
+.start-animation .letter.e.first {
+  left: 34%;
 }
-.start-animation .letter.e:last-child {
-  left: -35%;
+.start-animation .letter.e.last {
+  left: -34%;
 }
 .start-animation .letter.m {
   left: 11.75%;
