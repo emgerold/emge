@@ -1,3 +1,5 @@
+@import url('fonts.css');
+
 body, html {
   background: #000;
   width: 100%;
@@ -21,7 +23,6 @@ body {
   color: #000;
   position: absolute;
   width: 100%;
-  text-align: center;
   transition: all 0.3s ease-in;
   top: 150%;
 }
@@ -40,19 +41,33 @@ body {
   position: relative;
   left: 0;
   top: 0;
-  transition: left 0.3s ease-out 0s, top 0.3s ease-out 0s, box-shadow 0.2s ease-in 0s, background 0.2s ease-in 0s;
+  transition: left 0.3s ease-out 0s, top 0.3s ease-out 0s, box-shadow 0.2s ease-in 0s, background 0.2s ease-in 0s, transform 0.2s ease-in 0s;
   box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  cursor:pointer;
 }
-.letter.active-content {
-  box-shadow: inset 0 0 10px 1px transparent;
-  background: #555457;
+.letter:hover,
+.letter:hover > div:before {
+  background: rgba(240, 150, 9, .4);
+}
+.letter.active-content.m,
+.letter.active-content.g {
+  top: -23.5vw;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);
+  background: rgba(240, 150, 9, 1);
+  cursor:s-resize;
+  z-index: 2;
+}
+.letter.active-content.e{
+  transform: scaleY(-1) translate(23vw, 23.5vw);
+}
+.letter.active-content.e.last{
+  transform:  translate(-23vw, -23.5vw);
 }
 .letter.active-content > div:before {
-  background: #555457;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);
+  background: rgba(240, 150, 9, 1);
 }
-.letter.active-content {
-  top: -10vw;
-}
+
 .letter.active-content.e:after {
   height: 70%;
 }
@@ -94,6 +109,9 @@ body {
   bottom: 0;
   right: 15%;
 }
+.letter.e {
+  /*z-index:1;*/
+}
 .letter.e > .background:before {
   top: 50%;
   left: 0;
@@ -116,7 +134,9 @@ body {
 }
 
 .start-animation .letter {
-  animation: rotate 2.5s infinite ease-in-out 1s forwards;
+  /*animation: rotate 2.5s infinite ease-in-out 1s forwards;*/
+  background: #414042!important;
+  cursor: default;
 }
 .start-animation .letter.e:first-child {
   left: 35%;
@@ -129,7 +149,7 @@ body {
   z-index: 2;
 }
 .start-animation .letter.g {
-  left: -11.75%;
+  left: -10.5%;
 }
 
 @keyframes rotate {

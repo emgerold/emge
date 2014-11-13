@@ -5,8 +5,8 @@ $(document).ready(function(){
     $(this).removeClass('start-animation');
 
     $links.on('click', function(){
-      $links.removeClass('active-content');
-      $(this).addClass('active-content');
+      // $links.removeClass('active-content');
+      $(this).toggleClass('active-content');
     });
   });
 });
