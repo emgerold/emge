@@ -12,7 +12,8 @@ $(document).ready(function(){
       if (counter === 4) {
       	setTimeout(function(){
       		$('.wrapper').addClass('final-state');
-      		$('[data-link="e1"], [data-link="e2"]').removeClass('active-content');
+      		// $('[data-link="e1"], [data-link="e2"]').removeClass('active-content');
+      		$('[data-link="e1"], [data-link="e2"]').addClass('inactive');
       		counter -= 2;
       	}, 1500);
       }

@@ -43,23 +43,32 @@ body, html {
 }
 
 h1 {
-	font-size: 383%;
-	margin-bottom: 1px;
-	font-family: "mecanoregular";
+	font-size: 184%;
+	font-family: "mecanoblack";
 	letter-spacing: 0.4px;
+	display: inline-block;
 }
 h2 {
-	font-size: 243%;
-	margin-bottom: 20px;
-	font-family: "mecanolight";
-	letter-spacing: 1px;
+  font-size: 243%;
+  margin-bottom: 7px;
+  font-family: "mecanolight";
+  letter-spacing: 1px;
+  display: inline-block;
+}
 }
 h3 {
 	font-size:150%;
 	margin-bottom: 18px;
 }
 
-.content {
-	text-align: center;
+p,a,em {
 	font-family: 'mecanoregular'
+}
+a {
+	color:#603C04;
+	text-decoration: none;
+	transition: color 0.2 ease-in;
+}
+a:hover {
+	color:#F09609;
 }
