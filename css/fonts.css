@@ -46,14 +46,11 @@ h1 {
 	font-size: 184%;
 	font-family: "mecanoblack";
 	letter-spacing: 0.4px;
-	display: inline-block;
 }
 h2 {
   font-size: 243%;
-  margin-bottom: 7px;
   font-family: "mecanolight";
   letter-spacing: 1px;
-  display: inline-block;
 }
 }
 h3 {
