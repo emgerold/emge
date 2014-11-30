@@ -33,8 +33,12 @@ ul li {
 .square-container{
   width: 20vw;
   height:20vw;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   display: inline-block;
   position: relative;
   margin-right: 2vw;
 }
+.square-container .letter:last-child {
+  margin-bottom: -3%;
+};

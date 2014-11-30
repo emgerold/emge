@@ -1,0 +1,59 @@
+.letter.type-a > .background:before {
+	border-style: solid;
+	border-width: 10.3vw;
+	left: 0%;
+	top:0%;
+	width: 0;
+	height:0;
+	margin: 0;
+	border-style: solid;
+	border-width: 10.3vw;
+	border-color: #000;
+	left:-3.5%;
+	top: -3.5%;
+}
+.letter.e.type-a > .background:before {
+	height: 3%;
+	border-left-color: #414042;
+	top: -6%;
+
+}
+.letter.m.type-a > .background:before {
+	width:3%;
+	border-top-color: #414042;
+	left: -6%;
+}
+.letter.g.type-a > .background:before {
+	width:3%;
+	border-bottom-color: #414042;
+	left: -6%;
+}
+
+
+.letter.type-b > .background {
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+
+.letter.e.type-c > .background {
+	width:97%;
+}
+.letter.m.type-c > .background {
+	height:97%;
+}
+.letter.g.type-c > .background {
+	width:97%;
+}
+.letter.g.type-c > .background:after {
+	content:"";
+	background:#414042;
+	width:3%;
+	height:50%;
+	right:0;
+	bottom:0;
+	position: absolute;
+
+}
