@@ -1,10 +1,11 @@
 @import url('fonts.css');
+@import url('letters.base.css');
+@import url('letters.type-a.css');
 
 body, html {
   background: #000;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 body {
@@ -29,167 +30,11 @@ ul li {
   text-align: center;
   vertical-align: middle;
 }
-
-.content {
-  color: #000;
-  position: absolute;
-  width: 43.3vw;
-  transition: all 0.3s ease-in;
-  top:0;
-  left:23vw;
-  visibility: hidden;
-  opacity: 0;
-  text-align: left;
-}
-
-.final-state .content {
-  color: #ececec;
-  top:108%;
-  opacity: 100;
-  visibility: visible;
-}
-.final-state .letter {
-  transform-origin:0 0;
-  /*transform:rotateX(30deg);*/
-}
-
-.letter {
-  background: #414042;
+.square-container{
   width: 20vw;
-  height: 20vw;
+  height:20vw;
+  overflow: scroll;
   display: inline-block;
-  margin: 0 3vw 0 -4px;
   position: relative;
-  left: 0;
-  top: 0;
-  tranform-origin:0;
-  transition: left 0.3s ease-out 0s, top 0.3s ease-out 0s, box-shadow 0.2s ease-in 0s, background 0.2s ease-in 0s, transform 0.6s ease 0s;
-  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.5);*/
-  cursor:pointer;
-}
-.letter.active-content.inactive,
-.letter.active-content.inactive > div:before {
-  background: #414042;
-}
-.letter:hover,
-.letter:hover > div:before {
-  background: rgba(240, 150, 9, .4);
-}
-.letter.active-content {
-  /*top: -14%;*/
-  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);*/
-  background: rgba(240, 150, 9, 1);
-  cursor:s-resize;
-  z-index: 2;
-}
-.letter.active-content.e{
-  tranform-origin:0px 50% 0px;
-  /*transform: scaleY(-1) translate(23vw, 23.5vw);*/
-}
-.letter.active-content.e.last{
-  /*transform:  translate(-23vw, -23.5vw);*/
-}
-.letter.active-content > div:before {
-  /*box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);*/
-  background: rgba(240, 150, 9, 1);
-}
-
-.letter.active-content.e:after {
-  height: 80%;
-}
-.letter.active-content.m:after {
-  width: 80%;
-}
-.letter.active-content.g:after {
-  height: 39%;
-}
-.letter > .background {
-  width: 94%;
-  height: 94%;
-  background: #000;
-  position: absolute;
-  top: 3%;
-  left: 3%;
-}
-.letter > .background:before {
-  content: "";
-  display: block;
-  position: absolute;
-  background: #414042;
-  transition: background 0.2s ease-in 0s;
-}
-.letter:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 10%;
-  width: 3%;
-  height: 0%;
-  background: #000;
-  transition: all 0.3s ease-out 0s;
-}
-.letter.m:after {
-  height: 3%;
-  width: 0%;
-  top: auto;
-  bottom: 0;
-  right: 10%;
-}
-.letter.e {
-  /*z-index:1;*/
-}
-.letter.e > .background:before ,
-.letter.e.inactive > .background:before {
-  top: 50%;
-  left: 0;
-  width: 60%;
-  height: 3%;
-  margin-top: -1.5%;
-}
-.letter.m > .background:before {
-  left: 50%;
-  width: 3%;
-  height: 60%;
-  margin-left: -1.5%;
-}
-.letter.g > .background:before {
-  top: 50%;
-  right: 0;
-  width: 60%;
-  height: 3%;
-  margin-top: -1.5%;
-}
-
-.start-animation .letter {
-  /*animation: rotate 2.5s infinite ease-in-out 1s forwards;*/
-  background: #414042!important;
-  cursor: default;
-}
-.start-animation .letter.e.first {
-  left: 34%;
-}
-.start-animation .letter.e.last {
-  left: -34%;
-}
-.start-animation .letter.m {
-  left: 11.75%;
-  z-index: 2;
-}
-.start-animation .letter.g {
-  left: -10.5%;
-}
-
-@keyframes rotate {
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  75% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  margin-right: 2vw;
 }

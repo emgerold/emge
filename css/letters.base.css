@@ -1,0 +1,59 @@
+.letter {
+  background: #414042;
+  width: 20vw;
+  height: 20vw;
+  display: inline-block;
+  margin: 0 0 2vw 0;
+  position: relative;
+  cursor:pointer;
+}
+.letter:hover,
+.letter:hover > div:before {
+  background: rgba(240, 150, 9, .4);
+}
+
+.letter:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  width: 3%;
+  height: 0%;
+  background: #000;
+}
+
+
+.letter > .background {
+  width: 94%;
+  height: 94%;
+  background: #000;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+}
+.letter > .background:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #414042;
+}
+.letter.e > .background:before {
+  top: 50%;
+  left: 0;
+  width: 60%;
+  height: 3%;
+  margin-top: -1.5%;
+}
+.letter.m > .background:before {
+  left: 50%;
+  width: 3%;
+  height: 60%;
+  margin-left: -1.5%;
+}
+.letter.g > .background:before {
+  top: 50%;
+  right: 0;
+  width: 60%;
+  height: 3%;
+  margin-top: -1.5%;
+}
