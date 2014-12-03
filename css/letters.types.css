@@ -1,3 +1,32 @@
+.letter.type-a:after {
+   content: "";
+   position: absolute;
+   left: 0px;
+   top: 2.5%;
+   width: 0;
+   height: 3%;
+   border-style: solid;
+   border-width: 9.2vw;
+   background:transparent;
+}
+.letter.e.type-a:after {
+	border-color: transparent transparent transparent #000;
+}
+.letter.m.type-a:after {
+	border-color: #000 transparent transparent transparent;
+	border-width: 9.76vw;
+	width:3%;
+	height:0;
+	top:-2.5%;
+}
+.letter.g.type-a:after {
+	border-color: transparent transparent #000 transparent;
+	border-width: 9.76vw;
+	width:3%;
+	height:0;
+	top:auto;
+	bottom:-4.5%;
+}
 .letter.type-a > .background:before {
 	border-style: solid;
 	border-width: 10.3vw;
@@ -51,9 +80,11 @@
 	content:"";
 	background:#414042;
 	width:3%;
-	height:50%;
+	height:48.5%;
 	right:0;
 	bottom:0;
 	position: absolute;
-
+}
+.letter.g.type-c:hover > .background:after {
+	background: rgba(240, 150, 9, .4);
 }

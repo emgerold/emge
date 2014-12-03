@@ -1,6 +1,6 @@
 @import url('fonts.css');
 @import url('letters.base.css');
-@import url('letters.type-a.css');
+@import url('letters.types.css');
 
 body, html {
   background: #000;
@@ -38,6 +38,12 @@ ul li {
   display: inline-block;
   position: relative;
   margin-right: 2vw;
+
+  transition:height .8s cubic-bezier(.47,-0.15,.58,1.21) 0s;
+}
+.full .square-container {
+  height:88vw;
+  overflow-y: hidden;
 }
 .square-container .letter:last-child {
   margin-bottom: -3%;
