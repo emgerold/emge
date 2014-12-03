@@ -10,7 +10,7 @@ $(document).ready(function(){
     }
   });
 
-  scrollContainers($containers);
+  //scrollContainers($containers);
 });
 
 function scrollContainers($c) {
