@@ -7,6 +7,12 @@
   position: relative;
   cursor:pointer;
 }
+.solved.DB .letter.type-c.m,
+.solved.DB .letter.type-c.m > div:before,
+.solved.DB .letter.type-c.g,
+.solved.DB .letter.type-c.g > div:before {
+  background: rgba(240, 150, 9, .7);
+}
 .letter:hover,
 .letter:hover > div:before {
   background: rgba(240, 150, 9, .4);

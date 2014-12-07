@@ -85,6 +85,9 @@
 	bottom:0;
 	position: absolute;
 }
+.solved.DB .letter.g.type-c .background:after {
+	background: rgba(240, 150, 9, .7);
+}
 .letter.g.type-c:hover > .background:after {
 	background: rgba(240, 150, 9, .4);
 }

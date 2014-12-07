@@ -1,32 +1,77 @@
-$(document).ready(function(){
-  var $containers = $('.square-container');
-
-  $containers.on('click', function(){
-    $(this).parent().toggleClass('full');
-    if (!$(this).parent().hasClass('full')) {
-      setTimeout(function(){
-        scrollContainers($containers);
-      }, 800);
-    }
-  });
-
-  //scrollContainers($containers);
-});
-
-function scrollContainers($c) {
-  $c.each(function(){
-    setScrollPosition($(this));
-  });
+var emgeSettings = {
+    scrollPositions:[],
+    currentScrollPosition: [0,0,0,0],
+    containers: null
 }
 
-function setScrollPosition($el, min,max) {
-  var lowerBound = min ? min : 0,
-      upperBound = max ? max : 700,
-      scroll = randomIntFromInterval(lowerBound, upperBound);
+$(document).ready(function(){
+  emgeSettings.containers = $('.square-container');
+  emgeSettings.scrollPositions = getScrollPositions('[data-link="e1"]');
+
+  // reset all containers
+  emgeSettings.containers.each(function(){setScrollPosition(0, $(this))});
+
+  // scroll to a position
+  emgeSettings.containers.on('click.containerModus', function(){
+    definePositioning('DB', $(this));
+  });
+
+});
+
+function setScrollPosition(position, $el) {
+  var lowerBound = 0,
+      upperBound = 700,
+      scroll = 0;
+
+  if (position === 'random') {
+    scroll = randomIntFromInterval(lowerBound, upperBound);
+  } else {
+    scroll = position;
+  }
+
   $el.scrollTo(Math.floor(scroll));
 }
 
-function randomIntFromInterval(min,max)
-{
-    return Math.floor(Math.random()*(max-min+1)+min);
+function getScrollPositions(selector) {
+  var scrollPositions = [];
+  $(selector).each(function(){
+    var offsetTop = $(this).offset().top - $(this).parent('.square-container').offset().top;
+    scrollPositions.push(Math.ceil(offsetTop));
+  });
+  return scrollPositions;
+}
+
+function definePositioning(mode, $el) {
+
+  switch(mode) {
+    case 'DB':
+      var index = $el.index();
+      var scroll = Math.ceil(emgeSettings.scrollPositions[randomIntFromInterval(0,3)]);
+
+      while (scroll === emgeSettings.currentScrollPosition[index]) {
+        scroll = emgeSettings.scrollPositions[randomIntFromInterval(0,3)];
+      };
+
+      setScrollPosition(scroll, $el);
+      emgeSettings.currentScrollPosition[index] = scroll;
+    break;
+
+  }
+  if (ArrayOfTheSame(emgeSettings.currentScrollPosition)) {
+    showResult(mode);
+  }
+}
+
+function showResult(mode){
+  $('body').addClass('solved ' + mode);
+  emgeSettings.containers.off('click.containerModus');
+}
+
+function randomIntFromInterval(min,max) {
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+function ArrayOfTheSame(array) {
+  if(!array.length) return true;
+  // I also made sure it works with [false, false] array
+  return array.reduce(function(a, b){return (a === b)?a:("false"+b);}) === array[0];
 }

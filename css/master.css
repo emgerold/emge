@@ -34,17 +34,37 @@ ul li {
   width: 20vw;
   height:20vw;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   display: inline-block;
   position: relative;
   margin-right: 2vw;
 
-  transition:height .8s cubic-bezier(.47,-0.15,.58,1.21) 0s;
-}
-.full .square-container {
-  height:88vw;
-  overflow-y: hidden;
+  transition: height .8s cubic-bezier(.47,-0.15,.58,1.21) 3s;
 }
 .square-container .letter:last-child {
   margin-bottom: -3%;
-};
+}
+
+.full .square-container,
+.solved .square-container {
+  height:88vw;
+  /*overflow-y: hidden;*/
+  animation:zoomInOut 1s cubic-bezier(.47,-0.15,.58,1.21) forwards 1s;
+}
+
+@keyframes zoomInOut {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.2);}
+    100% {transform: scale(1);}
+}
+
+@keyframes blink {
+    0% {background: rgba(240, 150, 9, .5);}
+    50% {background: rgba(240, 150, 9, 1);}
+    100% {background: rgba(240, 150, 9, .6);}
+}
+
+
+
+
+
