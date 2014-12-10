@@ -1,0 +1,8 @@
+.col-25, .col-75, .col-50 { display:table-cell;
+}
+.col-25 { width:22.5vw;
+}
+.col-50 { width:50vw;
+}
+.col-75 { width:67.5vw;
+}

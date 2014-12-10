@@ -39,7 +39,8 @@
 body, html {
 	font-size:100%;
 	line-height:1;
-	font-family:Arial, sans-serif;
+	font-family: Arial, sans-serif;
+  color:#FFF;
 }
 
 h1 {
@@ -52,14 +53,15 @@ h2 {
   font-family: "mecanolight";
   letter-spacing: 1px;
 }
-}
+
 h3 {
-	font-size:150%;
+	font-size:270%;
 	margin-bottom: 18px;
+  font-family: 'mecanoregular';
 }
 
-p,a,em {
-	font-family: 'mecanoregular'
+p,a,em,label {
+	font-family: 'mecanoregular';
 }
 a {
 	color:#603C04;

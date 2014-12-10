@@ -1,4 +1,6 @@
+@import url('layout.css');
 @import url('fonts.css');
+@import url('forms.css');
 @import url('letters.base.css');
 @import url('letters.types.css');
 
@@ -22,7 +24,17 @@ ul li {
   display: inline-block;
   margin-right: 15px;
 }
+header {
+  display:none;
 
+
+  position: absolute;
+  top:17.6vw;
+  left:5vw;
+  box-sizing:border-box;
+  text-align: left;
+  /*border:1px solid;*/
+}
 
 .wrapper {
   display: table-cell;
@@ -30,6 +42,7 @@ ul li {
   text-align: center;
   vertical-align: middle;
 }
+
 .square-container{
   width: 20vw;
   height:20vw;
@@ -39,7 +52,7 @@ ul li {
   position: relative;
   margin-right: 2vw;
 
-  transition: height .8s cubic-bezier(.47,-0.15,.58,1.21) 3s;
+  /*transition: height .8s cubic-bezier(.47,-0.15,.58,1.21) 3s;*/
 }
 .square-container .letter:last-child {
   margin-bottom: -3%;

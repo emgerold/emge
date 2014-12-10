@@ -16,6 +16,17 @@ $(document).ready(function(){
     definePositioning('DB', $(this));
   });
 
+  // scroll to raondom position on each
+  emgeSettings.containers.each(function(){
+    setScrollPosition('random', $(this));
+  });
+  $('body').one('click', function(){
+      $('header').show();
+      emgeSettings.containers.each(function(){
+        setScrollPosition(0, $(this));
+      });
+  })
+
 });
 
 function setScrollPosition(position, $el) {
