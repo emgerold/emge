@@ -16,31 +16,37 @@
 	<script src="js/main.js"></script>
 </head>
 	<body>
-	<div class='wrapper'>
-		<header>
-			<div class="col-50">
-				<h3>Choose a usability
-					<span>and select 4 of the same</span>
-				</h3>
-			</div>
-			<div class="col-50">
-				<label class="radio">
-					<input type="radio" name="mode" value="hard" selected />
-					<span>none</span>
-				</label>
-				<label class="radio">
+	<div class='col-wrapper'>
 
-					<input type="radio" name="mode" value="medium" />
-					<span>solid</span>
-				</label>
-				<label class="radio">
+				<div class="col-25">
+					<h3>Choose a usability</h3>
+				</div>
+				<div class="col-25">
 
-					<input type="radio" name="mode" value="easy" />
-					<span>strong</span>
-				</label>
-			</div>
-		</header>
-		<div class="square-container">
+					<label class="radio">
+
+						<input type="radio" name="mode" value="usability-strong" />
+						<span>strong</span>
+					</label>
+					<label class="radio solid">
+
+						<input type="radio" name="mode" value="usability-solid" />
+						<span>solid</span>
+					</label>
+					<label class="radio bad">
+						<input type="radio" name="mode" value="usability-bad" />
+						<span>none</span>
+					</label>
+
+				</div>
+				<div class="col-25">
+					<!-- <h3>and select four of the same</h3> -->
+				</div>
+				<div class="col-25">
+					<!-- <p>© emgerold</p> -->
+				</div>
+
+		<div class="square-container col-25">
 		  <div class='letter e first' data-link='e1'>
 		    <div class='background'></div>
 		  </div>
@@ -54,7 +60,7 @@
 		    <div class='background'></div>
 		  </div>
 		</div>
-	  <div class="square-container">
+	  <div class="square-container col-25">
 		  <div class='letter m' data-link='m'>
 		    <div class='background'></div>
 		  </div>
@@ -68,7 +74,7 @@
 		    <div class='background'></div>
 		  </div>
 		</div>
-	  <div class="square-container">
+	  <div class="square-container col-25">
 		  <div class='letter g' data-link='g'>
 		    <div class='background'></div>
 		  </div>
@@ -82,7 +88,7 @@
 		    <div class='background'></div>
 		  </div>
 		</div>
-	  <div class="square-container">
+	  <div class="square-container col-25">
 		  <div class='letter e last' data-link='e2'>
 		    <div class='background'></div>
 		  </div>

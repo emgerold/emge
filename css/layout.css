@@ -1,6 +1,19 @@
+.col-wrapper {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .col-25, .col-75, .col-50 { display:table-cell;
 }
-.col-25 { width:22.5vw;
+.col-25 {
+	width: 20vw;
+	overflow: hidden;
+	position: relative;
+	margin-right: 2vw;
+	display: inline-block;
+	text-align: left;
 }
 .col-50 { width:50vw;
 }

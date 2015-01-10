@@ -1,23 +1,65 @@
 label.radio {
-	width:20vw;
-	display:inline-block;
-	margin-right: 2vw;
-	background:#352302;
+	width: 20vw;
+	display: inline-block;
+	position: relative;
+	font-size: 5.7vw;
+	line-height: 1;
+	box-sizing: border-box;
 	text-align: center;
-	position: relative;;
-	background: #352302;
-	padding:5px 0;
+	padding-top: 2vw;
+	margin-top: 3vw;
+}
+label.radio.bad {
+	font-size: 2.8vw;
+
+}
+label.radio.solid {
+	font-size: 3.8vw;
+
+}
+label.radio.strong {
+
 }
 
 input[type="radio"] {
 	position: absolute;
 	visibility: hidden;
 	appearance:none;
-	width: 100%;
-	height: 100%;
+	width: 1px;
+	height: 1px;
 	left: 0;
 	top: 0;
 }
-input[type="radio"]:checked + span {
-	color:orange;
-};
+input[type="radio"] + span {
+	position: relative;
+}
+input[type="radio"] + span:before {
+	content: "";
+	position: absolute;
+	left:50%;
+	bottom:100%;
+	border-radius: 100%;
+	background:#646464;
+	z-index: 1;
+	margin-left: -1.5vw;
+	width:3vw;
+	height:3vw;
+	border:2px solid #333;
+	box-sizing:border-box;
+}
+
+input[type="radio"]:checked + span:before {
+	background:orange;
+	border-color:#FFF;
+}
+
+label.radio.bad input[type="radio"] + span:before {
+	width:2vw;
+	height:2vw;
+	margin-left: -1vw;
+}
+label.radio.solid input[type="radio"] + span:before {
+	width:2.5vw;
+	height:2.5vw;
+	margin-left: -1.25vw;
+}

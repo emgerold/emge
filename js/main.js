@@ -21,10 +21,11 @@ $(document).ready(function(){
     setScrollPosition('random', $(this));
   });
   $('body').one('click', function(){
-      $('header').show();
       emgeSettings.containers.each(function(){
         setScrollPosition(0, $(this));
       });
+
+      $('label').last().click();
   })
 
 });
@@ -59,8 +60,9 @@ function definePositioning(mode, $el) {
       var index = $el.index();
       var scroll = Math.ceil(emgeSettings.scrollPositions[randomIntFromInterval(0,3)]);
 
-      while (scroll === emgeSettings.currentScrollPosition[index]) {
-        scroll = emgeSettings.scrollPositions[randomIntFromInterval(0,3)];
+      if (scroll === emgeSettings.currentScrollPosition[index]) {
+        el.click();
+        return;
       };
 
       setScrollPosition(scroll, $el);

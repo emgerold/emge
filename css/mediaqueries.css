@@ -1,0 +1,16 @@
+@media (max-width: 600px) {
+	.col-wrapper {
+  	vertical-align: top;
+  }
+  .col-25 {
+    width:86vw;
+    text-align: center;
+  }
+  .square-container {
+  	width:20vw;
+  }
+  label.radio {
+  	display:block;
+  	margin:0 auto;
+  }
+}
