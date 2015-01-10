@@ -56,7 +56,7 @@ h2 {
 
 h3 {
 	font-size:4.4vw;
-  font-family: 'mecanoregular';
+  font-family: 'mecanolight';
 }
 h4 {
   font-size:3.4vw;
@@ -64,7 +64,7 @@ h4 {
 }
 
 p,a,em,label,span {
-	font-family: 'mecanoregular';
+	font-family: 'mecanolight';
 }
 
 a {
