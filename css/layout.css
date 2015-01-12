@@ -15,6 +15,14 @@
 	margin-right: 2vw;
 	display: inline-block;
 	text-align: left;
+	border: 0.5vw double #414042;
+	margin-top: 2vw;
+	box-sizing:border-box;
+	padding:10px;
+	/*
+		dotted
+		dashed
+	*/
 }
 .col-50 { width:50vw;
 }

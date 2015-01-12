@@ -26,18 +26,27 @@ ul li {
   margin-right: 15px;
 }
 
-
-
-
 .square-container{
   overflow-x: hidden;
   overflow-y: hidden;
-  margin-top: 2vw;
-
+  box-sizing:content-box;
+  border-width:0;
+  padding: 0;
   /*transition: height .8s cubic-bezier(.47,-0.15,.58,1.21) 3s;*/
 }
 .square-container .letter:last-child {
   margin-bottom: -3%;
+}
+
+.hint-solid {
+  opacity: 0;
+  visibility: hidden;
+  transition:all 0.3s ease-in 0s;
+}
+.usability-strong .hint-solid,
+.usability-solid .hint-solid {
+  opacity: 1;
+  visibility: visible;
 }
 
 .full .square-container,

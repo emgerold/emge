@@ -40,7 +40,7 @@ body, html {
 	font-size:100%;
 	line-height:1;
 	font-family: Arial, sans-serif;
-  color:#FFF;
+  color:#A6A9AB;
 }
 
 h1 {
@@ -55,12 +55,12 @@ h2 {
 }
 
 h3 {
-	font-size:4.4vw;
+	font-size:3.6vw;
   font-family: 'mecanolight';
 }
 h4 {
-  font-size:3.4vw;
-  font-family: 'mecanoregular';
+  font-size:3vw;
+  font-family: 'mecanolight';
 }
 
 p,a,em,label,span {

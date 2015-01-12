@@ -43,19 +43,28 @@
 }
 .letter.e.type-a > .background:before {
 	height: 3%;
-	border-left-color: #414042;
+	border-left-color: #656565;
 	top: -6%;
 
 }
+.letter.e.type-a:hover > .background:before {
+	border-left-color:#F16403;
+}
 .letter.m.type-a > .background:before {
 	width:3%;
-	border-top-color: #414042;
+	border-top-color: #656565;
 	left: -6%;
+}
+.letter.m.type-a:hover > .background:before {
+	border-top-color:#F16403;
 }
 .letter.g.type-a > .background:before {
 	width:3%;
-	border-bottom-color: #414042;
+	border-bottom-color: #656565;
 	left: -6%;
+}
+.letter.g.type-a:hover > .background:before {
+	border-bottom-color:#F16403;
 }
 
 
@@ -78,7 +87,7 @@
 }
 .letter.g.type-c > .background:after {
 	content:"";
-	background:#414042;
+	background:#656565;
 	width:3%;
 	height:48.5%;
 	right:0;
@@ -87,7 +96,9 @@
 }
 .solved.DB .letter.g.type-c .background:after {
 	background: rgba(240, 150, 9, .7);
+	background:#F16403;
 }
 .letter.g.type-c:hover > .background:after {
 	background: rgba(240, 150, 9, .4);
+	background:#F16403;
 }

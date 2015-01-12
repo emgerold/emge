@@ -1,5 +1,5 @@
 .letter {
-  background: #414042;
+  background: #656565;
   width: 20vw;
   height: 20vw;
   display: inline-block;
@@ -12,10 +12,12 @@
 .solved.DB .letter.type-c.g,
 .solved.DB .letter.type-c.g > div:before {
   background: rgba(240, 150, 9, .7);
+  background:#F16403;
 }
 .letter:hover,
 .letter:hover > div:before {
   background: rgba(240, 150, 9, .4);
+  background:#F16403;
 }
 
 .letter:after {
@@ -41,7 +43,7 @@
   content: "";
   display: block;
   position: absolute;
-  background: #414042;
+  background: #656565;
 }
 .letter.e > .background:before {
   top: 50%;

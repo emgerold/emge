@@ -1,31 +1,42 @@
-var emgeSettings = {
+var emge = {
     scrollPositions:[],
     currentScrollPosition: [0,0,0,0],
     containers: null
 }
-
+$(window).load(function(){
+  emge.scrollPositions = getScrollPositions('[data-link="e1"]');
+  console.log('possible scrolls', emge.scrollPositions);
+})
 $(document).ready(function(){
-  emgeSettings.containers = $('.square-container');
-  emgeSettings.scrollPositions = getScrollPositions('[data-link="e1"]');
+  emge.containers = $('.square-container');
 
   // reset all containers
-  emgeSettings.containers.each(function(){setScrollPosition(0, $(this))});
-
-  // scroll to a position
-  emgeSettings.containers.on('click.containerModus', function(){
-    definePositioning('DB', $(this));
-  });
+  //emge.containers.each(function(){setScrollPosition(0, $(this))});
 
   // scroll to raondom position on each
-  emgeSettings.containers.each(function(){
-    setScrollPosition('random', $(this));
+  emge.containers.each(function(){
+    var pos = randomIntFromInterval(0,3);
+    setScrollPosition(emge.scrollPositions[pos], $(this));
   });
+
   $('body').one('click', function(){
-      emgeSettings.containers.each(function(){
-        setScrollPosition(0, $(this));
+      // set random start position
+      emge.containers.each(function(idc){
+        var pos = randomIntFromInterval(0,3);
+        pos = emge.scrollPositions[pos];
+        setScrollPosition(pos, $(this));
       });
 
       $('label').last().click();
+  });
+
+  $('input[name="mode"]').on('change', function(){
+    var mode = $(this).val();
+    console.log('Usabulity mode', mode);
+    $('body').removeClass().addClass(mode);
+    emge.containers.on('click.containerModus', function(){
+      definePositioning(mode, $(this));
+    });
   })
 
 });
@@ -33,7 +44,8 @@ $(document).ready(function(){
 function setScrollPosition(position, $el) {
   var lowerBound = 0,
       upperBound = 700,
-      scroll = 0;
+      scroll = 0,
+      index = $el.attr('data-index');
 
   if (position === 'random') {
     scroll = randomIntFromInterval(lowerBound, upperBound);
@@ -56,28 +68,31 @@ function getScrollPositions(selector) {
 function definePositioning(mode, $el) {
 
   switch(mode) {
-    case 'DB':
-      var index = $el.index();
-      var scroll = Math.ceil(emgeSettings.scrollPositions[randomIntFromInterval(0,3)]);
+    case 'usability-bad':
+      var index = $el.attr('data-index');
+      var scroll = Math.ceil(emge.scrollPositions[randomIntFromInterval(0,3)]);
 
-      if (scroll === emgeSettings.currentScrollPosition[index]) {
-        el.click();
+      if (scroll === emge.currentScrollPosition[index]) {
+        $el.click();
         return;
       };
 
+      emge.currentScrollPosition[index] = scroll;
       setScrollPosition(scroll, $el);
-      emgeSettings.currentScrollPosition[index] = scroll;
+
     break;
 
   }
-  if (ArrayOfTheSame(emgeSettings.currentScrollPosition)) {
-    showResult(mode);
+
+  if (ArrayOfTheSame(emge.currentScrollPosition)) {
+    //showResult(mode);
+    console.log('SOLVED');
   }
 }
 
 function showResult(mode){
   $('body').addClass('solved ' + mode);
-  emgeSettings.containers.off('click.containerModus');
+  emge.containers.off('click.containerModus');
 }
 
 function randomIntFromInterval(min,max) {
